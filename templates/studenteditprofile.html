@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        nav {
+            width: 100%;
+        }
+        nav div{
+            display: flex;
+            float: right;
+            margin-left: 20px;
+            margin-bottom: 60px;
+        }
+        nav p{
+            margin-right: 20px;
+        }
+
+        form{
+            width: 400px;
+            justify-content: center;
+            background-color: burlywood;
+            padding: 80px;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+           
+        }
+        input[type=submit]{
+            width: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <nav >
+        <div>
+            <p><a href="/studenteditprofile">EDIT PROFILE</a></p>
+            <p><a href="/studentviewteacher">VIEW TEACHERS</a></p>
+            <p><a href="/logout">LOGOUT</a></p>
+        </div>
+        
+    </nav>
+    <form action="studenteditprofile" method="post">
+        <h1>Update Student</h1>
+        <div>FIRST NAME: <input type="text" placeholder="FIRST NAME" name="firstname" value="{{data[0]}}"></div><br><br>
+        <div>LAST NAME: <input type="text" placeholder="LAST NAME" name="lastname" value="{{data[1]}}"></div> <br><br>
+        <div>ADDRESS: <input type="text" placeholder="ADDRESS" name="address" value="{{data[2]}}"></div><br><br>
+        <div>EMAIL: <input type="email" placeholder="EMAIL" name="email" value="{{data[3]}}"></div><br><br>
+        <div>PHONE NUMBER: <input type="number" placeholder="PHONE NUMBER" name="phone_number" value="{{data[4]}}"></div><br><br>
+        <div>GUARDIAN: <input type="text" placeholder="GUARDIAN" name="guardian" value="{{data[5]}}"></div><br><br>
+        
+        <input type="submit" value="UPDATE">
+    </form>
+    
+
+</body>
+</html>

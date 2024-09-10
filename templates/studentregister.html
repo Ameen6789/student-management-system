@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        form{
+            width: 400px;
+            justify-content: center;
+            background-color: burlywood;
+            padding: 80px;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+           
+        }
+        input[type=submit]{
+            width: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <h1>Registration</h1>
+        <div>FIRST NAME: <input type="text" placeholder="FIRST NAME" name="firstname" required></div><br><br>
+        <div>LAST NAME: <input type="text" placeholder="LAST NAME" name="lastname" required></div> <br><br>
+        <div>ADDRESS: <input type="text" placeholder="ADDRESS" name="address" required></div><br><br>
+        <div>EMAIL: <input type="email" placeholder="EMAIL" name="email" required></div><br><br>
+        <div>PHONE NUMBER: <input type="number" placeholder="PHONE NUMBER" name="phone_number" required></div><br><br>
+        <div>GUARDIAN: <input type="text" placeholder="GUARDIAN" name="guardian" required></div><br><br>
+        <div>USER NAME: <input type="text" placeholder="USER NAME" name="username" required></div><br><br>
+        <div>PASSWORD: <input type="password" placeholder="PASSWORD" name="password" required></div><br><br>
+        <input type="submit" value="REGISTER">
+    </form>
+    
+
+</body>
+</html>

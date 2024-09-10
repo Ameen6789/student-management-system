@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        nav {
+            width: 100%;
+        }
+        nav div{
+            display: flex;
+            float: right;
+            margin-left: 20px;
+            margin-bottom: 60px;
+        }
+        nav p{
+            margin-right: 20px;
+        }
+        form{
+            width: 400px;
+            justify-content: center;
+            background-color: burlywood;
+            padding: 80px;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+           
+        }
+        input[type=submit]{
+            width: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <nav >
+        <div>
+            <p><a href="/addteacher">ADD TEACHER</a></p>
+            <p><a href="/adminviewstudent">VIEW STUDENT</a></p>
+            <p><a href="/adminviewteacher">VIEW TEACHER</a></p>
+            <p><a href="/logout">LOGOUT</a></p>
+        </div>
+        
+    </nav>
+
+    <form action="/addteacher" method="post">
+        
+        <h1>Add a New Teacher</h1>
+        <div>
+            FIRST NAME: <input type="text" placeholder="FIRST NAME" name="firstname" required><br><br>
+
+        </div>
+        <div>
+            LAST NAME: <input type="text" placeholder="LAST NAME" name="lastname" required><br><br>
+
+        </div>
+        <div>
+            ADDRESS: <input type="text" placeholder="ADDRESS" name="address" required><br><br>
+
+        </div>
+        <div>
+            EMAIL: <input type="email" placeholder="EMAIL" name="email" required><br><br>
+
+        </div>
+        <div>
+            PHONE NUMBER: <input type="number" placeholder="PHONE NUMBER" name="phone_number" required><br><br>
+
+        </div>
+        <div>
+            EXPERIENCE: <input type="number" placeholder="EXPERIENCE" name="experience" required><br><br>
+
+        </div>
+        <div>
+            SALARY: <input type="number" placeholder="SALARY" name="salary" required><br><br>
+
+        </div>
+        
+        <div>
+            USER NAME: <input type="text" placeholder="USER NAME" name="username" required><br><br>
+
+        </div>
+        <div>
+            PASSWORD: <input type="password" placeholder="PASSWORD" name="password" required><br><br>
+
+        </div>
+        
+        <input type="submit" value="ADD">
+    </form>
+</body>
+</html>
