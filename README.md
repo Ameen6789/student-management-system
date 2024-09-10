@@ -6,18 +6,19 @@
 ```
 git clone https://github.com/Ameen6789/student-management-system
 ```
-2.entry repository folder and Create virtual environment
+
+2. entry repository folder and Create virtual environment
 
 ```
 cd student-management-system
 ```
 
-3.Install requirements.txt
+3. Install requirements.txt
 ```
 pip install -r requirements.txt
 ```
 
-4.run flask app
+4. run flask app
 ```
 py studentmanagement.py  
 ```
