@@ -1,7 +1,7 @@
 <h1>Student Management System</h1>
 <p>This a Student Management System created using Python and Flask</p>
-###How to install
-1. Ensure Python version is atleast 3.8 
+## How to install
+1. Ensure Python version is atleast 3.8 </br>
 2. Clone Repository
 
 ```
