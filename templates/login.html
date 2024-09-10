@@ -4,12 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        
+        form{
+            width: 400px;
+            justify-content: center;
+            background-color: burlywood;
+            padding: 80px;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+           
+        }
+        input[type=submit]{
+            width: 100px;
+
+        }
+    </style>
 </head>
 <body>
-    <form action="/login" method="post">
-        Username: <input type="text" name="username" id="" required><br>
-        Password: <input type="password" name="password" id="" required><br>
-        <input type="submit" value="Login" id="">
+    
+    <form action="/" method="post">
+        <h1>Login</h1>
+        
+        <div>USERNAME: <input type="text" placeholder="USERNAME" name="username" required></div><br><br>
+        <div>PASSWORD: <input type="password" placeholder="PASSWORD" name="password" required></div><br><br>
+        <input type="submit" value="LOGIN"><br>
+        <p>Don't have an account? &nbsp;<a href="/studentregister"><b>REGISTER</b></a></p>
     </form>
 </body>
 </html>

@@ -2,11 +2,9 @@ from flask import *
 import sqlite3
 app=Flask(__name__)
 app.secret_key = 'abcdef'
-@app.route("/")
-def home():
-    return render_template("home.html")
 
-@app.route("/login",methods=["get","post"])
+
+@app.route("/",methods=["get","post"])
 def logins():
     
     
@@ -22,8 +20,8 @@ def logins():
         cursor.execute("select id,username,password,usertype,is_approved from user where username=?",(USERNAME,))
         
         id,usern,passw,usertype,is_approved=cursor.fetchone()
-        print(id,usertype)
-        # return make_response("dhshdsj")
+       
+        
         
         if (usertype=="student") and (USERNAME==usern and PASSWORD==passw) and is_approved:
             session["student_id"]=id
@@ -43,7 +41,8 @@ def logouts():
         del session["student_id"]
     if "teacher_id" in session:
         del session["teacher_id"]
-    return render_template("login.html")
+    return redirect(url_for("logins"))
+
 @app.route("/studentregister",methods=["get","post"])
 def studentregister():
     if request.method=="POST":
@@ -62,12 +61,10 @@ def studentregister():
         con.row_factory=sqlite3.Row
         cursor.execute("select max(id) from user")
         id=cursor.fetchone()[0]
-        print(id,"*************************************")
         cursor.execute("insert into student(firstname,lastname,email,address,phone_number,guardian,id) values(?,?,?,?,?,?,?)",(firstname,lastname,email,address,phone,guardian,id))
         con.commit()
         return render_template("login.html")
-        # print(firstname,lastname,address,email,phone,guardian,USERNAME,PASSWORD)
-        # return redirect(url_for("logins"))
+        
     else:
         return render_template("studentregister.html")
     
@@ -90,12 +87,10 @@ def addteacher():
         con.row_factory=sqlite3.Row
         cursor.execute("select max(id) from user")
         id=cursor.fetchone()[0]
-        print(id,"*************************************")
         cursor.execute("insert into teacher(firstname,lastname,email,address,phone_number,experience,salary,id) values(?,?,?,?,?,?,?,?)",(firstname,lastname,email,address,phone,experience,salary,id))
         con.commit()
         return render_template("login.html")
-        # print(firstname,lastname,address,email,phone,guardian,USERNAME,PASSWORD)
-        # return redirect(url_for("logins"))
+        
     else:
         return render_template("addteacher.html")
     
@@ -111,8 +106,8 @@ def adminviewstudent():
     
     datas=cursor.fetchall()
     
-    print(datas)
-    # datau=cursor.fetchall()
+  
+    
     return render_template("adminviewstudent.html",data=datas)
 
 
@@ -155,7 +150,6 @@ def adminviewteacher():
     con.row_factory=sqlite3.Row
     cursor.execute("select firstname,lastname,email,address,phone_number,experience,salary,id from teacher")
     datas=cursor.fetchall()
-    print(datas)
     return render_template("adminviewteacher.html",data=datas)
 
 
@@ -182,7 +176,6 @@ def studenteditprofile():
         id=session["student_id"]
         cursor.execute("select firstname,lastname,address,email,phone_number,guardian,id from student where id=?",(id,))
         datas=cursor.fetchone()
-        print(datas)
         return render_template("studenteditprofile.html",data=datas)
     
 @app.route("/studentviewteacher")
@@ -192,8 +185,6 @@ def studentviewteacher():
     con.row_factory=sqlite3.Row
     cursor.execute("select firstname,lastname,email,address,phone_number,experience,salary from teacher")
     datas=cursor.fetchall()
-    print(datas)
-    # datau=cursor.fetchall()
     return render_template("studentviewteacher.html",data=datas)
 
 
@@ -223,7 +214,6 @@ def teachereditprofile():
         id=session["teacher_id"]
         cursor.execute("select firstname,lastname,address,email,phone_number,experience,salary,id from teacher where id=?",(id,))
         datas=cursor.fetchone()
-        print(datas)
         return render_template("teachereditprofile.html",data=datas)
     
 
@@ -234,8 +224,6 @@ def teacherviewstudent():
     con.row_factory=sqlite3.Row
     cursor.execute("select firstname,lastname,email,address,phone_number,guardian from student")
     datas=cursor.fetchall()
-    print(datas)
-    # datau=cursor.fetchall()
     return render_template("teacherviewstudent.html",data=datas)
     
 if __name__=="__main__":
