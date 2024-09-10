@@ -5,12 +5,12 @@
 <p>2.Clone Repository</p>
 ```
 git clone https://github.com/Ameen6789/student-management-system
-```
+
 2.entry repository folder and Create virtual environment
 
 ```
 cd student-management-system
-virtualenv python -m venv
+
 
 3.Install requirements.txt
 ```
