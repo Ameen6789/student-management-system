@@ -18,5 +18,5 @@ pip install -r requirements.txt
 4.run flask app
 ```
 py studentmanagement.py  
-```
+
 
