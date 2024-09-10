@@ -15,7 +15,7 @@ virtualenv python -m venv
 ```
 pip install -r requirements.txt
 ```
-4.run flask app
+<!-- 4.run flask app
 ```
 py studentmanagement.py  
-```
+``` -->
