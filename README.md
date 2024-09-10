@@ -3,6 +3,7 @@
 <h1>How to install?</h1>
 
 ```
+```
 1. Ensure Python version is atleast 3.8 <br>
 
 2. Clone Repository
