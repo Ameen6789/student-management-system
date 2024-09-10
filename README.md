@@ -1,7 +1,7 @@
 # Student Management System
 This a Student Management System created using Python and Flask
 ## How to install
-1. Ensure Python version is atleast 3.8 </br>
+1. Ensure Python version is atleast 3.8 </br></br>
 2. Clone Repository
 
 ```
