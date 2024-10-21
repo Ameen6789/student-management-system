@@ -33,7 +33,7 @@ def logins():
         else:
             return make_response("invalid login")
     else:
-        return render_template("login.html")
+        return render_template("home.html")
     
 @app.route("/logout")
 def logouts():
