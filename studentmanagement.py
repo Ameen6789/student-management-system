@@ -43,7 +43,7 @@ def logouts():
         del session["student_id"]
     if "teacher_id" in session:
         del session["teacher_id"]
-    return render_template("login.html")
+    return render_template("home.html")
 @app.route("/studentregister",methods=["get","post"])
 def studentregister():
     if request.method=="POST":

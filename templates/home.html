@@ -4,9 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
 </head>
-<body>
-    <p><a href="/login">Login</a></p>
-    <p><a href="/studentregister">Register</a></p>
+<body class="min-vh-100 d-flex align-items-center justify-content-center " style="background-image: url('static/images/school.jpg');background-size: cover;background-repeat: no-repeat;">
+    <form action="/login" method="post" class="px-5 py-4 w-25 shadow-sm bg-white rounded-2">
+        <h1 class="text-center mb-5">Login</h1>
+        <table class="w-100">
+
+            <tr>
+                <td class="pb-3 fw-bold">Username:</td>
+                
+                
+            </tr>
+            <tr>
+                <td class="pb-3 "><input type="text" name="username" id="" class="form-control" required></td>
+            </tr>
+
+            <tr>
+                <td class="pb-3 fw-bold">Password: </td>
+            </tr>
+            <tr>
+                
+                <td class="pb-3"><input type="password" name="password" id="" class="form-control" required></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Login" id="" class="btn border border-1 border-black mt-4 float-end mb-0 w-100 mb-4"></td>
+            </tr>
+
+        </table>
+        <p>Don't have an account? <a href="/studentregister" class="text-decoration-none">Sign up</a></p>
+         <br>
+        <br>
+        
+    </form>
 </body>
 </html>

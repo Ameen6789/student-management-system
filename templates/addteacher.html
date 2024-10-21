@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+
     <style>
         body{
             display: flex;
@@ -31,6 +33,7 @@
             padding: 80px;
             padding-top: 10px;
             padding-bottom: 20px;
+            margin-top: 80px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -41,62 +44,81 @@
             width: 100px;
 
         }
+        .nav-link{
+            color: black;
+        }
+        .nav-link:hover{
+            color: blue;
+            
+        }
     </style>
 </head>
-<body>
+<body style="background-color: rgb(248, 247, 247);">
     
-    <nav >
-        <div>
-            <p><a href="/addteacher">ADD TEACHER</a></p>
-            <p><a href="/adminviewstudent">VIEW STUDENT</a></p>
-            <p><a href="/adminviewteacher">VIEW TEACHER</a></p>
-            <p><a href="/logout">LOGOUT</a></p>
-        </div>
+    <nav class="navbar bg-white justify-content-end py-2 fixed-top shadow-sm pe-5">
+        <ul class="nav">
+            <li class="nav-item"><a href="/addteacher" class="nav-link  fw-bold ">Add Teacher</a></li>
+            <li class="nav-item"><a href="/adminviewstudent" class="nav-link  fw-bold">View Student</a></li>
+            <li class="nav-item"><a href="/adminviewteacher" class="nav-link  fw-bold">View Teacher</a></li>
+            <li class="nav-item"><a href="/logout" class="nav-link  fw-bold">Logout</a></li>
+        </ul>
+        
         
     </nav>
 
-    <form action="/addteacher" method="post">
+    <form action="/addteacher" method="post" class="w-auto py-3 ">
         
-        <h1>Add a New Teacher</h1>
-        <div>
-            FIRST NAME: <input type="text" placeholder="FIRST NAME" name="firstname" required><br><br>
+        <h1 class="mb-4 pb-2">Add Teacher</h1>
+        <table class="w-100">
+            <tr>
+                <td class="pb-3 fw-bold">First Name:</td>
+                <td class="pb-3"><input type="text" placeholder="FIRST NAME" name="firstname" required class="form-control"></td>
+            </tr>
 
-        </div>
-        <div>
-            LAST NAME: <input type="text" placeholder="LAST NAME" name="lastname" required><br><br>
+            <tr>
+                <td class="pb-3 fw-bold">Last Name:</td>
+                <td class="pb-3"><input type="text" placeholder="LAST NAME" name="lastname" required class="form-control"></td>
+            </tr>
 
-        </div>
-        <div>
-            ADDRESS: <input type="text" placeholder="ADDRESS" name="address" required><br><br>
+            <tr>
+                <td class="pb-3 fw-bold">Address:</td>
+                <td class="pb-3"><input type="text" placeholder="ADDRESS" name="address" required class="form-control"></td>
+            </tr>
 
-        </div>
-        <div>
-            EMAIL: <input type="email" placeholder="EMAIL" name="email" required><br><br>
+            <tr>
+                <td class="pb-3 fw-bold">Email:</td>
+                <td class="pb-3"><input type="email" placeholder="EMAIL" name="email" required class="form-control"></td>
+            </tr>
+            <tr>
+                <td class="pb-3 fw-bold pe-3">Phone Number:</td>
+                <td class="pb-3"><input type="number" placeholder="PHONE NUMBER" name="phone_number" required class="form-control"></td>
+            </tr>
+            <tr>
+                <td class="pb-3 fw-bold">Experience:</td>
+                <td class="pb-3"><input type="number" placeholder="EXPERIENCE" name="experience" required class="form-control"></td>
+            </tr>
+            <tr>
+                <td class="pb-3 fw-bold">Salary:</td>
+                <td class="pb-3"><input type="number" placeholder="SALARY" name="salary" required class="form-control"></td>
+            </tr>
+            <tr>
+                <td class="pb-3 fw-bold">Username:</td>
+                <td class="pb-3"><input type="text" placeholder="USER NAME" name="username" required class="form-control"></td>
+            </tr>
+            <tr>
+                <td class="pb-3 fw-bold">Password:</td>
+                <td class="pb-3"><input type="password" placeholder="PASSWORD" name="password" required class="form-control"></td>
+            </tr>
+            <tr>
+                <td class="pb-3"></td>
+                <td class="pb-3 fw-bold"><input type="submit" value="ADD" class="float-end btn border border-black  bg-white fw-bold"></td>
+            </tr>
+        </table>
 
-        </div>
-        <div>
-            PHONE NUMBER: <input type="number" placeholder="PHONE NUMBER" name="phone_number" required><br><br>
 
-        </div>
-        <div>
-            EXPERIENCE: <input type="number" placeholder="EXPERIENCE" name="experience" required><br><br>
-
-        </div>
-        <div>
-            SALARY: <input type="number" placeholder="SALARY" name="salary" required><br><br>
-
-        </div>
         
-        <div>
-            USER NAME: <input type="text" placeholder="USER NAME" name="username" required><br><br>
-
-        </div>
-        <div>
-            PASSWORD: <input type="password" placeholder="PASSWORD" name="password" required><br><br>
-
-        </div>
         
-        <input type="submit" value="ADD">
+        
     </form>
 </body>
 </html>

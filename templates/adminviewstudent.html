@@ -4,74 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+
     <style>
-        table,td,th{
-            border-collapse: collapse;
-            border: 2px solid blue;
-            
-        }
+        
         table{
             width: 100%;
+            margin-top: 80px;
         }
         td,th{
             text-align: center;
         }
-        nav {
-            width: 100%;
+        .nav-link{
+            color: black;
         }
-        nav div{
-            display: flex;
-            float: right;
-            margin-left: 20px;
-            margin-bottom: 30px;
-        }
-        nav p{
-            margin-right: 20px;
+        .nav-link:hover{
+            color: blue;
+            
         }
     </style>
 </head>
-<body>
-    <nav>
-        <div>
-            <p><a href="/addteacher">ADD TEACHER</a></p>
-            <p><a href="/adminviewstudent">VIEW STUDENT</a></p>
-            <p><a href="/adminviewteacher">VIEW TEACHER</a></p>
-            <p><a href="/logout">LOGOUT</a></p>
-        </div>
-        
-    </nav>
-    <table>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Phone Number</th>
-            <th>Guardian</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-        {% for i in data %}
-        <tr>
-            <td>{{i[1]}}</td>
-            <td>{{i[2]}}</td>
-            <td>{{i[3]}}</td>
-            <td>{{i[4]}}</td>
-            <td>{{i[5]}}</td>
-            <td>{{i[6]}}</td>
 
-            <td>{% if i[0] == 1 %}
-                APPROVED
-                
-                {% else %}
-                 <a href="approvestudent/{{i[7]}}">APPROVE</a>
-                 {% endif %}
-             </td>
+    <body style="background-color: rgb(248, 247, 247);">
+    
+        <nav class="navbar bg-white justify-content-end py-2 fixed-top shadow-sm pe-5">
+            <ul class="nav">
+                <li class="nav-item"><a href="/addteacher" class="nav-link  fw-bold ">Add Teacher</a></li>
+                <li class="nav-item"><a href="/adminviewstudent" class="nav-link  fw-bold">View Student</a></li>
+                <li class="nav-item"><a href="/adminviewteacher" class="nav-link  fw-bold">View Teacher</a></li>
+                <li class="nav-item"><a href="/logout" class="nav-link  fw-bold">Logout</a></li>
+            </ul>
             
-            <td><a href="deletestudent/{{i[7]}}">DELETE</a></td>
-        </tr>
-        {% endfor %}
+            
+        </nav>
+        <div class="px-3">
+            <table class="table shadow-sm">
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Phone Number</th>
+                    <th>Guardian</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                {% for i in data %}
+                <tr>
+                    <td>{{i[1]}}</td>
+                    <td>{{i[2]}}</td>
+                    <td>{{i[3]}}</td>
+                    <td>{{i[4]}}</td>
+                    <td>{{i[5]}}</td>
+                    <td>{{i[6]}}</td>
         
-    </table>
+                    <td>{% if i[0] == 1 %}
+                        APPROVED
+                        
+                        {% else %}
+                         <a href="approvestudent/{{i[7]}}">APPROVE</a>
+                         {% endif %}
+                     </td>
+                    
+                    <td><a href="deletestudent/{{i[7]}}">DELETE</a></td>
+                </tr>
+                {% endfor %}
+                
+            </table>
+        </div>
+    
 </body>
 </html>

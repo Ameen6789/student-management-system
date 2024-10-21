@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+
     <style>
         body{
             display: flex;
@@ -35,60 +37,81 @@
             flex-direction: column;
             align-items: center;
             border-radius: 10px;
+            margin-top: 80px;
            
         }
         input[type=submit]{
             width: 100px;
 
         }
+        .nav-link{
+            color: black;
+        }
+        .nav-link:hover{
+            color: blue;
+            
+        }
     </style>
 </head>
-<body>
+<body style="background-color: rgb(248, 247, 247);">
     
-    <nav >
-        <div>
-            <p><a href="/teachereditprofile">EDIT PROFILE</a></p>
-            <p><a href="/teacherviewstudent">VIEW STUDENTS</a></p>          
-            <p><a href="/logout">LOGOUT</a></p>
-        </div>
+
+    <nav class="navbar bg-white justify-content-end py-2 fixed-top shadow-sm pe-5">
+        <ul class="nav">
+            <li class="nav-item"><a href="/teachereditprofile" class="nav-link  fw-bold ">EDIT PROFILE</a></li>
+            <li class="nav-item"><a href="/teacherviewstudent" class="nav-link  fw-bold ">VIEW STUDENTS</a></li>
+            <li class="nav-item"><a href="/logout" class="nav-link  fw-bold ">LOGOUT</a></li>
+        </ul>
         
     </nav>
 
-    <form action="/teachereditprofile" method="post">
+    <form action="/teachereditprofile" method="post" class="w-auto">
         
-        <h1>Update Teacher</h1>
-        <div>
-            FIRST NAME: <input type="text" placeholder="FIRST NAME" name="firstname" value="{{data[0]}}"><br><br>
+        <h1 class="my-4 ">Update Profile</h1>
 
-        </div>
-        <div>
-            LAST NAME: <input type="text" placeholder="LAST NAME" name="lastname" value="{{data[1]}}"><br><br>
+        <table class="w-100">
+            <tr>
+                <td class="pb-3 fw-bold">First Name:</td>
+                <td class="pb-3"><input type="text" placeholder="FIRST NAME" name="firstname" value="{{data[0]}}" class="form-control"></td>
+            </tr>
 
-        </div>
-        <div>
-            ADDRESS: <input type="text" placeholder="ADDRESS" name="address" value="{{data[2]}}"><br><br>
+            <tr>
+                <td class="pb-3 fw-bold">Last Name:</td>
+                <td class="pb-3"><input type="text" placeholder="LAST NAME" name="lastname" value="{{data[1]}}" class="form-control"></td>
+            </tr>
 
-        </div>
-        <div>
-            EMAIL: <input type="email" placeholder="EMAIL" name="email" value="{{data[3]}}"><br><br>
+            <tr>
+                <td class="pb-3 fw-bold">Address:</td>
+                <td class="pb-3"><input type="text" placeholder="ADDRESS" name="address" value="{{data[2]}}" class="form-control"></td>
+            </tr>
 
-        </div>
-        <div>
-            PHONE NUMBER: <input type="number" placeholder="PHONE NUMBER" name="phone_number" value="{{data[4]}}"><br><br>
+            <tr>
+                <td class="pb-3 fw-bold">Email:</td>
+                <td class="pb-3"><input type="email" placeholder="EMAIL" name="email" value="{{data[3]}}" class="form-control"></td>
+            </tr>
 
-        </div>
+            <tr>
+                <td class="pb-3 fw-bold pe-3">Phone Number:</td>
+                <td class="pb-3"> <input type="number" placeholder="PHONE NUMBER" name="phone_number" value="{{data[4]}}" class="form-control"></td>
+            </tr>
+
+            <tr>
+                <td class="pb-3 fw-bold">Experience:</td>
+                <td class="pb-3"><input type="number" placeholder="EXPERIENCE" name="experience" value="{{data[5]}}" class="form-control"></td>
+            </tr>
+
+            <tr>
+                <td class="pb-3 fw-bold">Salary:</td>
+                <td class="pb-3"> <input type="number" placeholder="SALARY" name="salary" value="{{data[6]}}" class="form-control"></td>
+            </tr>
+
+            <tr>
+                <td class="pb-3"></td>
+                <td class="pb-3"><input type="submit" value="UPDATE" class="btn border-1 border-black bg-white float-end mt-3" class="form-control"></td>
+            </tr>
+        </table>
         
-        <div>
-            EXPERIENCE: <input type="number" placeholder="EXPERIENCE" name="experience" value="{{data[5]}}"><br><br>
-
-        </div>
-        <div>
-            SALARY: <input type="number" placeholder="SALARY" name="salary" value="{{data[6]}}"><br><br>
-
-        </div>
         
-        
-        <input type="submit" value="UPDATE">
     </form>
 </body>
 </html>
