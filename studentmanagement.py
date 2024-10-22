@@ -63,7 +63,7 @@ def studentregister():
         id=cursor.fetchone()[0]
         cursor.execute("insert into student(firstname,lastname,email,address,phone_number,guardian,id) values(?,?,?,?,?,?,?)",(firstname,lastname,email,address,phone,guardian,id))
         con.commit()
-        return render_template("login.html")
+        return render_template("home.html")
         
     else:
         return render_template("studentregister.html")
@@ -89,7 +89,7 @@ def addteacher():
         id=cursor.fetchone()[0]
         cursor.execute("insert into teacher(firstname,lastname,email,address,phone_number,experience,salary,id) values(?,?,?,?,?,?,?,?)",(firstname,lastname,email,address,phone,experience,salary,id))
         con.commit()
-        return render_template("login.html")
+        return render_template("home.html")
         
     else:
         return render_template("addteacher.html")
